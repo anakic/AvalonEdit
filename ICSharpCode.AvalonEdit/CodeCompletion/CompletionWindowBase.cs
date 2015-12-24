@@ -84,6 +84,9 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			StartOffset = EndOffset = this.TextArea.Caret.Offset;
 			
 			AttachEvents();
+
+            this.ResizeMode = System.Windows.ResizeMode.NoResize;
+            this.WindowStyle = System.Windows.WindowStyle.None;
 		}
 		
 		#region Event Handlers
