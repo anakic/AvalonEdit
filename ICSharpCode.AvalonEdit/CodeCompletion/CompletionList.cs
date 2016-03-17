@@ -137,7 +137,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 		/// </summary>
 		public void HandleKey(KeyEventArgs e)
 		{
-			if (listBox == null)
+			if (listBox == null || e.KeyboardDevice.Modifiers != ModifierKeys.None)
 				return;
 			
 			// We have to do some key handling manually, because the default doesn't work with
