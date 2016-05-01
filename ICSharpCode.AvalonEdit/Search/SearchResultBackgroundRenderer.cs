@@ -46,7 +46,7 @@ namespace ICSharpCode.AvalonEdit.Search
 		
 		public SearchResultBackgroundRenderer()
 		{
-			markerBrush = Brushes.LightGreen;
+            markerBrush = new SolidColorBrush(Color.FromRgb(0xFF, 0xC0, 0x50));
 			markerPen = new Pen(markerBrush, 1);
 		}
 		
