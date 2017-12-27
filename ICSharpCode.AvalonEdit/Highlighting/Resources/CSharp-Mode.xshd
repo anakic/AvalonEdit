@@ -116,7 +116,7 @@
 				<Span begin="\\" end="."/>
 				<Span begin="\{\{" end=""/>
 				<!-- string interpolation -->
-				<Span begin="{" end="}" color="StringInterpolation" ruleSet=""/>
+				<Span begin="{" end="}" color="String" ruleSet=""/>
 			</RuleSet>
 		</Span>
 		
