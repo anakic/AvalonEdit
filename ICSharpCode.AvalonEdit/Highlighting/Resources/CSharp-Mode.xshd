@@ -6,26 +6,26 @@
 	<Color name="Char" foreground="#C4424F" exampleText="char linefeed = '\n';"/>
 	<Color name="Preprocessor" foreground="Green" exampleText="#region Title" />
 	<Color name="Punctuation" exampleText="a(b.c);" />
-	<Color name="ValueTypeKeywords" foreground="#002CFF" exampleText="bool b = true;" />
-	<Color name="ReferenceTypeKeywords" foreground="#002CFF" exampleText="object o;" />
+	<Color name="ValueTypeKeywords" foreground="#1048f7" exampleText="bool b = true;" />
+	<Color name="ReferenceTypeKeywords" foreground="#1048f7" exampleText="object o;" />
 	<Color name="MethodCall" foreground="MidnightBlue" exampleText="o.ToString();"/>
 	<Color name="NumberLiteral" foreground="DarkBlue" exampleText="3.1415f"/>
-	<Color name="ThisOrBaseReference" foreground="#002CFF" exampleText="this.Do(); base.Do();"/>
-	<Color name="NullOrValueKeywords" foreground="#002CFF"  exampleText="if (value == null)"/>
-	<Color name="Keywords" foreground="#002CFF" exampleText="if (a) {} else {}"/>
-	<Color name="GotoKeywords" foreground="#002CFF" exampleText="continue; return null;"/>
-	<Color name="ContextKeywords" foreground="#002CFF" exampleText="var a = from x in y select z;"/>
-	<Color name="ExceptionKeywords" foreground="#002CFF" exampleText="try {} catch {} finally {}"/>
-	<Color name="CheckedKeyword" foreground="#002CFF" exampleText="checked {}"/>
-	<Color name="UnsafeKeywords" foreground="#002CFF" exampleText="unsafe { fixed (..) {} }"/>
-	<Color name="OperatorKeywords" foreground="#002CFF" exampleText="public static implicit operator..."/>
-	<Color name="ParameterModifiers" foreground="#002CFF" exampleText="(ref int a, params int[] b)"/>
-	<Color name="Modifiers" foreground="#002CFF" exampleText="static readonly int a;"/>
-	<Color name="Visibility" foreground="#002CFF" exampleText="public override void ToString();"/>
-	<Color name="NamespaceKeywords" foreground="#002CFF" exampleText="namespace A.B { using System; }"/>
-	<Color name="GetSetAddRemove" foreground="#002CFF" exampleText="int Prop { get; set; }"/>
-	<Color name="TrueFalse" foreground="#002CFF" exampleText="b = false; a = true;" />
-	<Color name="TypeKeywords" foreground="#002CFF"  exampleText="if (x is int) { a = x as int; type = typeof(int); size = sizeof(int); c = new object(); }"/>
+	<Color name="ThisOrBaseReference" foreground="#1048f7" exampleText="this.Do(); base.Do();"/>
+	<Color name="NullOrValueKeywords" foreground="#1048f7"  exampleText="if (value == null)"/>
+	<Color name="Keywords" foreground="#1048f7" exampleText="if (a) {} else {}"/>
+	<Color name="GotoKeywords" foreground="#1048f7" exampleText="continue; return null;"/>
+	<Color name="ContextKeywords" foreground="#1048f7" exampleText="var a = from x in y select z;"/>
+	<Color name="ExceptionKeywords" foreground="#1048f7" exampleText="try {} catch {} finally {}"/>
+	<Color name="CheckedKeyword" foreground="#1048f7" exampleText="checked {}"/>
+	<Color name="UnsafeKeywords" foreground="#1048f7" exampleText="unsafe { fixed (..) {} }"/>
+	<Color name="OperatorKeywords" foreground="#1048f7" exampleText="public static implicit operator..."/>
+	<Color name="ParameterModifiers" foreground="#1048f7" exampleText="(ref int a, params int[] b)"/>
+	<Color name="Modifiers" foreground="#1048f7" exampleText="static readonly int a;"/>
+	<Color name="Visibility" foreground="#1048f7" exampleText="public override void ToString();"/>
+	<Color name="NamespaceKeywords" foreground="#1048f7" exampleText="namespace A.B { using System; }"/>
+	<Color name="GetSetAddRemove" foreground="#1048f7" exampleText="int Prop { get; set; }"/>
+	<Color name="TrueFalse" foreground="#1048f7" exampleText="b = false; a = true;" />
+	<Color name="TypeKeywords" foreground="#1048f7"  exampleText="if (x is int) { a = x as int; type = typeof(int); size = sizeof(int); c = new object(); }"/>
 	<Color name="SemanticKeywords" fontWeight="bold" foreground="DarkCyan" exampleText="if (args == null) throw new ArgumentNullException(nameof(args));" />
 
 	<Property name="DocCommentMarker" value="///" />
