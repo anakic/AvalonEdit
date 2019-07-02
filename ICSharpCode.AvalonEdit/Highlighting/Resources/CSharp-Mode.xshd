@@ -26,16 +26,16 @@
 	<Color name="GetSetAddRemove" foreground="#1048f7" exampleText="int Prop { get; set; }"/>
 	<Color name="TrueFalse" foreground="#1048f7" exampleText="b = false; a = true;" />
 	<Color name="TypeKeywords" foreground="#1048f7"  exampleText="if (x is int) { a = x as int; type = typeof(int); size = sizeof(int); c = new object(); }"/>
-	<Color name="SemanticKeywords" fontWeight="bold" foreground="DarkCyan" exampleText="if (args == null) throw new ArgumentNullException(nameof(args));" />
+	<Color name="SemanticKeywords" foreground="#222255" exampleText="if (args == null) throw new ArgumentNullException(nameof(args));" />
 
 	<Property name="DocCommentMarker" value="///" />
 	
 	<RuleSet name="CommentMarkerSet">
-		<Keywords fontWeight="bold" foreground="Red">
+		<Keywords foreground="Red">
 			<Word>TODO</Word>
 			<Word>FIXME</Word>
 		</Keywords>
-		<Keywords fontWeight="bold" foreground="#E0E000">
+		<Keywords foreground="#E0E000">
 			<Word>HACK</Word>
 			<Word>UNDONE</Word>
 		</Keywords>
