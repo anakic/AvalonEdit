@@ -300,8 +300,8 @@ namespace ICSharpCode.AvalonEdit.Rendering
 					yield return lastRect;
 			}
 		}
-		
-		PathFigureCollection figures = new PathFigureCollection();
+
+        readonly PathFigureCollection figures = new PathFigureCollection();
 		PathFigure figure;
 		int insertionIndex;
 		double lastTop, lastBottom;

@@ -97,8 +97,8 @@ namespace ICSharpCode.AvalonEdit.Search
 			commandBindings.Add(new CommandBinding(SearchCommands.FindPrevious, ExecuteFindPrevious, CanExecuteWithOpenSearchPanel));
 			commandBindings.Add(new CommandBinding(SearchCommands.CloseSearchPanel, ExecuteCloseSearchPanel, CanExecuteWithOpenSearchPanel));
 		}
-		
-		SearchPanel panel;
+
+        readonly SearchPanel panel;
 		
 		void ExecuteFind(object sender, ExecutedRoutedEventArgs e)
 		{

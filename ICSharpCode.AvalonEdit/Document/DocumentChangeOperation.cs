@@ -26,8 +26,8 @@ namespace ICSharpCode.AvalonEdit.Document
 	/// </summary>
 	sealed class DocumentChangeOperation : IUndoableOperationWithContext
 	{
-		TextDocument document;
-		DocumentChangeEventArgs change;
+        readonly TextDocument document;
+        readonly DocumentChangeEventArgs change;
 		
 		public DocumentChangeOperation(TextDocument document, DocumentChangeEventArgs change)
 		{

@@ -26,9 +26,9 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 	[Serializable]
 	public struct XshdReference<T> : IEquatable<XshdReference<T>> where T : XshdElement
 	{
-		string referencedDefinition;
-		string referencedElement;
-		T inlineElement;
+        readonly string referencedDefinition;
+        readonly string referencedElement;
+        readonly T inlineElement;
 		
 		/// <summary>
 		/// Gets the reference.

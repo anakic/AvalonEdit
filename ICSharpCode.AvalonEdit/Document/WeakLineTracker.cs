@@ -26,7 +26,7 @@ namespace ICSharpCode.AvalonEdit.Document
 	public sealed class WeakLineTracker : ILineTracker
 	{
 		TextDocument textDocument;
-		WeakReference targetObject;
+        readonly WeakReference targetObject;
 		
 		private WeakLineTracker(TextDocument textDocument, ILineTracker targetTracker)
 		{

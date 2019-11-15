@@ -54,9 +54,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			ClipToBoundsProperty.OverrideMetadata(typeof(TextView), new FrameworkPropertyMetadata(Boxes.True));
 			FocusableProperty.OverrideMetadata(typeof(TextView), new FrameworkPropertyMetadata(Boxes.False));
 		}
-		
-		ColumnRulerRenderer columnRulerRenderer;
-		CurrentLineHighlightRenderer currentLineHighlighRenderer;
+
+        readonly ColumnRulerRenderer columnRulerRenderer;
+        readonly CurrentLineHighlightRenderer currentLineHighlighRenderer;
 		
 		/// <summary>
 		/// Creates a new TextView instance.
@@ -446,10 +446,10 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				return inlineObjects.Select(io => io.Element).Concat(layers.Cast<UIElement>()).GetEnumerator();
 			}
 		}
-		#endregion
-		
-		#region Inline object handling
-		List<InlineObjectRun> inlineObjects = new List<InlineObjectRun>();
+        #endregion
+
+        #region Inline object handling
+        readonly List<InlineObjectRun> inlineObjects = new List<InlineObjectRun>();
 		
 		/// <summary>
 		/// Adds a new inline object.
@@ -496,8 +496,8 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				}
 			}
 		}
-		
-		List<VisualLine> visualLinesWithOutstandingInlineObjects = new List<VisualLine>();
+
+        readonly List<VisualLine> visualLinesWithOutstandingInlineObjects = new List<VisualLine>();
 		
 		void RemoveInlineObjects(VisualLine visualLine)
 		{
@@ -1934,8 +1934,8 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			add { AddHandler(MouseHoverStoppedEvent, value); }
 			remove { RemoveHandler(MouseHoverStoppedEvent, value); }
 		}
-		
-		MouseHoverLogic hoverLogic;
+
+        readonly MouseHoverLogic hoverLogic;
 		
 		void RaiseHoverEventPair(MouseEventArgs e, RoutedEvent tunnelingEvent, RoutedEvent bubblingEvent)
 		{

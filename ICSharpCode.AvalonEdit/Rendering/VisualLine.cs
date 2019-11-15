@@ -45,8 +45,8 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			Live,
 			Disposed
 		}
-		
-		TextView textView;
+
+        readonly TextView textView;
 		List<VisualLineElement> elements;
 		internal bool hasInlineObjects;
 		LifetimePhase phase;

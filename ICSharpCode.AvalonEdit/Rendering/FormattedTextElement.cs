@@ -127,7 +127,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 	public class FormattedTextRun : TextEmbeddedObject
 	{
 		readonly FormattedTextElement element;
-		TextRunProperties properties;
+        readonly TextRunProperties properties;
 		
 		/// <summary>
 		/// Creates a new FormattedTextRun.

@@ -32,7 +32,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 	{
 		Pen pen;
 		int column;
-		TextView textView;
+        readonly TextView textView;
 		
 		public static readonly Color DefaultForeground = Colors.LightGray;
 		

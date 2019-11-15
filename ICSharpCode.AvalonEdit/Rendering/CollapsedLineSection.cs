@@ -29,7 +29,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 	public sealed class CollapsedLineSection
 	{
 		DocumentLine start, end;
-		HeightTree heightTree;
+        readonly HeightTree heightTree;
 		
 		#if DEBUG
 		internal string ID;

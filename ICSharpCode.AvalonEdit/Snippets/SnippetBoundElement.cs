@@ -81,9 +81,9 @@ namespace ICSharpCode.AvalonEdit.Snippets
 	
 	sealed class BoundActiveElement : IActiveElement
 	{
-		InsertionContext context;
-		SnippetReplaceableTextElement targetSnippetElement;
-		SnippetBoundElement boundElement;
+        readonly InsertionContext context;
+        readonly SnippetReplaceableTextElement targetSnippetElement;
+        readonly SnippetBoundElement boundElement;
 		internal IReplaceableActiveElement targetElement;
 		AnchorSegment segment;
 		

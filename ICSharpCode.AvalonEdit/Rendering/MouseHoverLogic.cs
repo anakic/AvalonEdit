@@ -28,7 +28,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 	/// </summary>
 	public class MouseHoverLogic : IDisposable
 	{
-		UIElement target;
+        readonly UIElement target;
 		
 		DispatcherTimer mouseHoverTimer;
 		Point mouseHoverStartPoint;

@@ -157,8 +157,8 @@ namespace ICSharpCode.AvalonEdit.Folding
 			}
 			TextViewVisualLinesChanged(null, null);
 		}
-		
-		List<FoldingMarginMarker> markers = new List<FoldingMarginMarker>();
+
+        readonly List<FoldingMarginMarker> markers = new List<FoldingMarginMarker>();
 		
 		void TextViewVisualLinesChanged(object sender, EventArgs e)
 		{

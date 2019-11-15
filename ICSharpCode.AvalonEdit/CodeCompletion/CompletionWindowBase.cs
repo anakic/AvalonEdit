@@ -48,8 +48,8 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 		/// Gets the parent TextArea.
 		/// </summary>
 		public TextArea TextArea { get; private set; }
-		
-		Window parentWindow;
+
+        readonly Window parentWindow;
 		TextDocument document;
 		
 		/// <summary>

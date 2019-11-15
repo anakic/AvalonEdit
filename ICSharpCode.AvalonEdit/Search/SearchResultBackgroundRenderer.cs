@@ -31,7 +31,7 @@ namespace ICSharpCode.AvalonEdit.Search
 {
 	class SearchResultBackgroundRenderer : IBackgroundRenderer
 	{
-		TextSegmentCollection<SearchResult> currentResults = new TextSegmentCollection<SearchResult>();
+        readonly TextSegmentCollection<SearchResult> currentResults = new TextSegmentCollection<SearchResult>();
 		
 		public TextSegmentCollection<SearchResult> CurrentResults {
 			get { return currentResults; }

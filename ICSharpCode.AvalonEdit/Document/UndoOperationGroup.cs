@@ -28,7 +28,7 @@ namespace ICSharpCode.AvalonEdit.Document
 	/// </summary>
 	sealed class UndoOperationGroup : IUndoableOperationWithContext
 	{
-		IUndoableOperation[] undolist;
+        readonly IUndoableOperation[] undolist;
 		
 		public UndoOperationGroup(Deque<IUndoableOperation> stack, int numops)
 		{

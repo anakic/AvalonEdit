@@ -176,7 +176,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 		sealed class TabGlyphRun : TextEmbeddedObject
 		{
 			readonly TabTextElement element;
-			TextRunProperties properties;
+            readonly TextRunProperties properties;
 			
 			public TabGlyphRun(TabTextElement element, TextRunProperties properties)
 			{

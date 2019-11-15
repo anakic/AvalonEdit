@@ -142,9 +142,9 @@ namespace ICSharpCode.AvalonEdit.Snippets
 				this.InsertionPosition += remainingInsertString.Length;
 			}
 		}
-		
-		Dictionary<SnippetElement, IActiveElement> elementMap = new Dictionary<SnippetElement, IActiveElement>();
-		List<IActiveElement> registeredElements = new List<IActiveElement>();
+
+        readonly Dictionary<SnippetElement, IActiveElement> elementMap = new Dictionary<SnippetElement, IActiveElement>();
+        readonly List<IActiveElement> registeredElements = new List<IActiveElement>();
 		
 		/// <summary>
 		/// Registers an active element. Elements should be registered during insertion and will be called back

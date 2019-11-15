@@ -31,7 +31,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 	/// </summary>
 	public class VisualLineText : VisualLineElement
 	{
-		VisualLine parentVisualLine;
+        readonly VisualLine parentVisualLine;
 		
 		/// <summary>
 		/// Gets the parent visual line.

@@ -42,7 +42,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 		IntPtr previousContext;
 		IntPtr defaultImeWnd;
 		HwndSource hwndSource;
-		EventHandler requerySuggestedHandler; // we need to keep the event handler instance alive because CommandManager.RequerySuggested uses weak references
+        readonly EventHandler requerySuggestedHandler; // we need to keep the event handler instance alive because CommandManager.RequerySuggested uses weak references
 		bool isReadOnly;
 		
 		public ImeSupport(TextArea textArea)

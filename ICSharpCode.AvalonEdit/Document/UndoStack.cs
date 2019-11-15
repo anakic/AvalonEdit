@@ -39,9 +39,8 @@ namespace ICSharpCode.AvalonEdit.Document
 		/// state is used for checking that noone but the UndoStack performs changes
 		/// during Undo events
 		internal int state = StateListen;
-		
-		Deque<IUndoableOperation> undostack = new Deque<IUndoableOperation>();
-		Deque<IUndoableOperation> redostack = new Deque<IUndoableOperation>();
+        readonly Deque<IUndoableOperation> undostack = new Deque<IUndoableOperation>();
+        readonly Deque<IUndoableOperation> redostack = new Deque<IUndoableOperation>();
 		int sizeLimit = int.MaxValue;
 		
 		int undoGroupDepth;

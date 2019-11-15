@@ -31,8 +31,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 		/// XML namespace for XSHD.
 		/// </summary>
 		public const string Namespace = V2Loader.Namespace;
-		
-		XmlWriter writer;
+        readonly XmlWriter writer;
 		
 		/// <summary>
 		/// Creates a new SaveXshdVisitor instance.

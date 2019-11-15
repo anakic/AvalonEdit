@@ -62,9 +62,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 	/// </summary>
 	public class InlineObjectRun : TextEmbeddedObject
 	{
-		UIElement element;
-		int length;
-		TextRunProperties properties;
+        readonly UIElement element;
+        readonly int length;
+        readonly TextRunProperties properties;
 		internal Size desiredSize;
 		
 		/// <summary>

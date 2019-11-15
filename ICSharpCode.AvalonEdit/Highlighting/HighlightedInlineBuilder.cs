@@ -50,8 +50,8 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 		}
 		
 		readonly string text;
-		List<int> stateChangeOffsets = new List<int>();
-		List<HighlightingColor> stateChanges = new List<HighlightingColor>();
+        readonly List<int> stateChangeOffsets = new List<int>();
+        readonly List<HighlightingColor> stateChanges = new List<HighlightingColor>();
 		
 		int GetIndexForOffset(int offset)
 		{

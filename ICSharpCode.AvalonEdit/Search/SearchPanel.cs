@@ -333,8 +333,8 @@ namespace ICSharpCode.AvalonEdit.Search
 				SelectResult(result);
 			}
 		}
-		
-		ToolTip messageView = new ToolTip { Placement = PlacementMode.Bottom, StaysOpen = true, Focusable = false };
+
+        readonly ToolTip messageView = new ToolTip { Placement = PlacementMode.Bottom, StaysOpen = true, Focusable = false };
 
 		void DoSearch(bool changeSelection)
 		{
@@ -507,7 +507,7 @@ namespace ICSharpCode.AvalonEdit.Search
 	
 	class SearchPanelAdorner : Adorner
 	{
-		SearchPanel panel;
+        readonly SearchPanel panel;
 		
 		public SearchPanelAdorner(TextArea textArea, SearchPanel panel)
 			: base(textArea)

@@ -62,7 +62,7 @@ namespace ICSharpCode.AvalonEdit.Snippets
 		}
 		
 		AnchorSegment segment;
-		InsertionContext context;
+        readonly InsertionContext context;
 		
 		/// <inheritdoc />
 		public ISegment Segment {

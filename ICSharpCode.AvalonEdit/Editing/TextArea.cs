@@ -333,10 +333,10 @@ namespace ICSharpCode.AvalonEdit.Editing
 		
 		sealed class RestoreCaretAndSelectionUndoAction : IUndoableOperation
 		{
-			// keep textarea in weak reference because the IUndoableOperation is stored with the document
-			WeakReference textAreaReference;
+            // keep textarea in weak reference because the IUndoableOperation is stored with the document
+            readonly WeakReference textAreaReference;
 			TextViewPosition caretPosition;
-			Selection selection;
+            readonly Selection selection;
 			
 			public RestoreCaretAndSelectionUndoAction(TextArea textArea)
 			{
@@ -613,8 +613,8 @@ namespace ICSharpCode.AvalonEdit.Editing
 			
 			this.textView.HighlightedLine = this.Caret.Line;
 		}
-		
-		ObservableCollection<UIElement> leftMargins = new ObservableCollection<UIElement>();
+
+        readonly ObservableCollection<UIElement> leftMargins = new ObservableCollection<UIElement>();
 		
 		/// <summary>
 		/// Gets the collection of margins displayed to the left of the text view.
@@ -1143,7 +1143,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 	[Serializable]
 	public class TextEventArgs : EventArgs
 	{
-		string text;
+        readonly string text;
 		
 		/// <summary>
 		/// Gets the text.

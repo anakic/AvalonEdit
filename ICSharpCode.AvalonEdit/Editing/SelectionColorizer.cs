@@ -26,7 +26,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 {
 	sealed class SelectionColorizer : ColorizingTransformer
 	{
-		TextArea textArea;
+        readonly TextArea textArea;
 		
 		public SelectionColorizer(TextArea textArea)
 		{

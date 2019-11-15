@@ -28,9 +28,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 	{
 		struct EventCall
 		{
-			EventHandler handler;
-			object sender;
-			EventArgs e;
+            readonly EventHandler handler;
+            readonly object sender;
+            readonly EventArgs e;
 			
 			public EventCall(EventHandler handler, object sender, EventArgs e)
 			{
@@ -44,8 +44,8 @@ namespace ICSharpCode.AvalonEdit.Utils
 				handler(sender, e);
 			}
 		}
-		
-		Queue<EventCall> eventCalls = new Queue<EventCall>();
+
+        readonly Queue<EventCall> eventCalls = new Queue<EventCall>();
 		
 		public void DelayedRaise(EventHandler handler, object sender, EventArgs e)
 		{

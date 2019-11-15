@@ -33,7 +33,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 		readonly IHighlightingDefinition definition;
 		TextView textView;
 		IHighlighter highlighter;
-		bool isFixedHighlighter;
+        readonly bool isFixedHighlighter;
 		
 		/// <summary>
 		/// Creates a new HighlightingColorizer instance.

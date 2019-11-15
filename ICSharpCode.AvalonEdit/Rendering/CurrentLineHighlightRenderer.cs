@@ -29,7 +29,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 		#region Fields
 		
 		int line;
-		TextView textView;
+        readonly TextView textView;
 		
 		public static readonly Color DefaultBackground = Color.FromArgb(22, 20, 220, 224);
 		public static readonly Color DefaultBorder = Color.FromArgb(52, 0, 255, 110);

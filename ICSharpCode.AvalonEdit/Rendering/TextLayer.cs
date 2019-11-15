@@ -47,8 +47,8 @@ namespace ICSharpCode.AvalonEdit.Rendering
 		public TextLayer(TextView textView) : base(textView, KnownLayer.Text)
 		{
 		}
-		
-		List<VisualLineDrawingVisual> visuals = new List<VisualLineDrawingVisual>();
+
+        readonly List<VisualLineDrawingVisual> visuals = new List<VisualLineDrawingVisual>();
 		
 		internal void SetVisualLines(ICollection<VisualLine> visualLines)
 		{

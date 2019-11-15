@@ -112,8 +112,8 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 		public ScrollViewer ScrollViewer {
 			get { return listBox != null ? listBox.scrollViewer : null; }
 		}
-		
-		ObservableCollection<ICompletionData> completionData = new ObservableCollection<ICompletionData>();
+
+        readonly ObservableCollection<ICompletionData> completionData = new ObservableCollection<ICompletionData>();
 		
 		/// <summary>
 		/// Gets the list to which completion data can be added.

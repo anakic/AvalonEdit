@@ -30,7 +30,7 @@ namespace ICSharpCode.AvalonEdit.Snippets
 	[Serializable]
 	public class SnippetContainerElement : SnippetElement
 	{
-		NullSafeCollection<SnippetElement> elements = new NullSafeCollection<SnippetElement>();
+        readonly NullSafeCollection<SnippetElement> elements = new NullSafeCollection<SnippetElement>();
 		
 		/// <summary>
 		/// Gets the list of child elements.

@@ -29,7 +29,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 	/// </summary>
 	public class OverloadInsightWindow : InsightWindow
 	{
-		OverloadViewer overloadViewer = new OverloadViewer();
+        readonly OverloadViewer overloadViewer = new OverloadViewer();
 		
 		/// <summary>
 		/// Creates a new OverloadInsightWindow.

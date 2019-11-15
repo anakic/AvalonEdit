@@ -38,7 +38,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 	{
 		readonly TextWriter htmlWriter;
 		readonly HtmlOptions options;
-		Stack<string> endTagStack = new Stack<string>();
+        readonly Stack<string> endTagStack = new Stack<string>();
 		bool spaceNeedsEscaping = true;
 		bool hasSpace;
 		bool needIndentation = true;

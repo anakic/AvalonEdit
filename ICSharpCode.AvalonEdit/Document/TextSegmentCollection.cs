@@ -73,7 +73,7 @@ namespace ICSharpCode.AvalonEdit.Document
 		
 		int count;
 		TextSegment root;
-		bool isConnectedToDocument;
+        readonly bool isConnectedToDocument;
 		
 		#region Constructor
 		/// <summary>

@@ -127,9 +127,9 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 		}
 		
 		readonly object lockObj = new object();
-		Dictionary<string, IHighlightingDefinition> highlightingsByName = new Dictionary<string, IHighlightingDefinition>();
-		Dictionary<string, IHighlightingDefinition> highlightingsByExtension = new Dictionary<string, IHighlightingDefinition>(StringComparer.OrdinalIgnoreCase);
-		List<IHighlightingDefinition> allHighlightings = new List<IHighlightingDefinition>();
+        readonly Dictionary<string, IHighlightingDefinition> highlightingsByName = new Dictionary<string, IHighlightingDefinition>();
+        readonly Dictionary<string, IHighlightingDefinition> highlightingsByExtension = new Dictionary<string, IHighlightingDefinition>(StringComparer.OrdinalIgnoreCase);
+        readonly List<IHighlightingDefinition> allHighlightings = new List<IHighlightingDefinition>();
 		
 		/// <summary>
 		/// Gets a highlighting definition by name.

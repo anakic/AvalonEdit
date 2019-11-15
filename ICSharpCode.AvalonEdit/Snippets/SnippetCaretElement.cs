@@ -30,7 +30,7 @@ namespace ICSharpCode.AvalonEdit.Snippets
 	public class SnippetCaretElement : SnippetElement
 	{
 		[OptionalField]
-		bool setCaretOnlyIfTextIsSelected;
+        readonly bool setCaretOnlyIfTextIsSelected;
 		
 		/// <summary>
 		/// Creates a new SnippetCaretElement.

@@ -30,12 +30,11 @@ namespace ICSharpCode.AvalonEdit.Editing
 {
 	sealed class CaretLayer : Layer
 	{
-		TextArea textArea;
+        readonly TextArea textArea;
 		
 		bool isVisible;
 		Rect caretRectangle;
-		
-		DispatcherTimer caretBlinkTimer = new DispatcherTimer();
+        readonly DispatcherTimer caretBlinkTimer = new DispatcherTimer();
 		bool blink;
 		
 		public CaretLayer(TextArea textArea) : base(textArea.TextView, KnownLayer.Caret)

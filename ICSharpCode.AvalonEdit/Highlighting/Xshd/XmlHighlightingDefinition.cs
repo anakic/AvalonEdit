@@ -60,7 +60,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 		#region RegisterNamedElements
 		sealed class RegisterNamedElementsVisitor : IXshdVisitor
 		{
-			XmlHighlightingDefinition def;
+            readonly XmlHighlightingDefinition def;
 			internal readonly Dictionary<XshdRuleSet, HighlightingRuleSet> ruleSets
 				= new Dictionary<XshdRuleSet, HighlightingRuleSet>();
 			
@@ -130,8 +130,8 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 			readonly Dictionary<XshdRuleSet, HighlightingRuleSet> ruleSetDict;
 			readonly Dictionary<HighlightingRuleSet, XshdRuleSet> reverseRuleSetDict;
 			readonly IHighlightingDefinitionReferenceResolver resolver;
-			HashSet<XshdRuleSet> processingStartedRuleSets = new HashSet<XshdRuleSet>();
-			HashSet<XshdRuleSet> processedRuleSets = new HashSet<XshdRuleSet>();
+            readonly HashSet<XshdRuleSet> processingStartedRuleSets = new HashSet<XshdRuleSet>();
+            readonly HashSet<XshdRuleSet> processedRuleSets = new HashSet<XshdRuleSet>();
 			bool ignoreCase;
 			
 			public TranslateElementVisitor(XmlHighlightingDefinition def, Dictionary<XshdRuleSet, HighlightingRuleSet> ruleSetDict, IHighlightingDefinitionReferenceResolver resolver)
@@ -374,11 +374,11 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 			else
 				return new HighlightingDefinitionInvalidException(message);
 		}
-		
-		Dictionary<string, HighlightingRuleSet> ruleSetDict = new Dictionary<string, HighlightingRuleSet>();
-		Dictionary<string, HighlightingColor> colorDict = new Dictionary<string, HighlightingColor>();
+
+        readonly Dictionary<string, HighlightingRuleSet> ruleSetDict = new Dictionary<string, HighlightingRuleSet>();
+        readonly Dictionary<string, HighlightingColor> colorDict = new Dictionary<string, HighlightingColor>();
 		[OptionalField]
-		Dictionary<string, string> propDict = new Dictionary<string, string>();
+        readonly Dictionary<string, string> propDict = new Dictionary<string, string>();
 		
 		public HighlightingRuleSet MainRuleSet { get; private set; }
 		
