@@ -7,7 +7,9 @@
 	<!-- Template for InsightWindow. Based on the template for ToolTip. -->
 	<Style TargetType="{x:Type cc:InsightWindow}">
 		<Setter Property="SizeToContent" Value="WidthAndHeight" />
-		
+		<Setter Property="ResizeMode" Value="NoResize" />
+		<Setter Property="MinWidth" Value="400" />
+
 		<Setter Property="BorderThickness" Value="1" />
 		<Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" />
 		<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" />
