@@ -58,8 +58,6 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			this.MinWidth = 30;
 
 			toolTip.Background = new SolidColorBrush(Color.FromArgb(0xff, 0xff, 0xff, 0xf2));
-			ToolTipService.SetInitialShowDelay(toolTip, 500);
-			ToolTipService.SetShowDuration(toolTip, 60000);
 			toolTip.PlacementTarget = this;
 			toolTip.Placement = PlacementMode.Right;
 			toolTip.Closed += toolTip_Closed;
