@@ -268,7 +268,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 		}
 		
 		/// <summary>
-		/// Gets whether the completion window should automatically close when the text editor looses focus.
+		/// Gets whether the completion window should automatically close when the text editor loses focus.
 		/// </summary>
 		protected virtual bool CloseOnFocusLost {
 			get { return true; }
@@ -283,20 +283,27 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 		}
 		
 		bool sourceIsInitialized;
-		
+
 		/// <inheritdoc/>
 		protected override void OnSourceInitialized(EventArgs e)
 		{
 			base.OnSourceInitialized(e);
-			
-			if (document != null && this.StartOffset != this.TextArea.Caret.Offset) {
-				SetPosition(new TextViewPosition(document.GetLocation(this.StartOffset)));
-			} else {
-				SetPosition(this.TextArea.Caret.Position);
-			}
+			SetWindowPosition();
 			sourceIsInitialized = true;
 		}
-		
+
+		protected void SetWindowPosition()
+		{
+			if (document != null && this.StartOffset != this.TextArea.Caret.Offset)
+			{
+				SetPosition(new TextViewPosition(document.GetLocation(this.StartOffset)));
+			}
+			else
+			{
+				SetPosition(this.TextArea.Caret.Position);
+			}
+		}
+
 		/// <inheritdoc/>
 		protected override void OnClosed(EventArgs e)
 		{

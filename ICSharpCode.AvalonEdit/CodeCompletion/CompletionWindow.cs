@@ -21,6 +21,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using System.Windows.Media;
 using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Editing;
 
@@ -55,7 +56,8 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			// prevent user from resizing window to 0x0
 			this.MinHeight = 15;
 			this.MinWidth = 30;
-			
+
+			toolTip.Background = new SolidColorBrush(Color.FromArgb(0xff, 0xff, 0xff, 0xf2));
 			toolTip.PlacementTarget = this;
 			toolTip.Placement = PlacementMode.Right;
 			toolTip.Closed += toolTip_Closed;
