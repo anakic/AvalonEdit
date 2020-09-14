@@ -288,11 +288,11 @@ namespace ICSharpCode.AvalonEdit.Editing
 		
 		void StartDrag()
 		{
+			// mouse capture and Drag'n'Drop don't mix
+			textArea.ReleaseMouseCapture();
+
 			// prevent nested StartDrag calls
 			mode = MouseSelectionMode.Drag;
-			
-			// mouse capture and Drag'n'Drop doesn't mix
-			textArea.ReleaseMouseCapture();
 			
 			DataObject dataObject = textArea.Selection.CreateDataObject(textArea);
 			
