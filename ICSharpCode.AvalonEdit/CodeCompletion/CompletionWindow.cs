@@ -91,6 +91,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 				} else {
 					toolTip.Content = description;
 				}
+				// this line is slow: seems to get description for all items instead of just the selected one
 				toolTip.IsOpen = true;
 			} else {
 				toolTip.IsOpen = false;
@@ -111,6 +112,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 		void AttachEvents()
 		{
 			this.completionList.InsertionRequested += completionList_InsertionRequested;
+			// commenting this out as it seems to slow down showing autocomplete (no idea why)
 			this.completionList.SelectionChanged += completionList_SelectionChanged;
 			this.TextArea.Caret.PositionChanged += CaretPositionChanged;
 			this.TextArea.MouseWheel += textArea_MouseWheel;
