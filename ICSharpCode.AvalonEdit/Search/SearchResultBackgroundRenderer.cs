@@ -18,13 +18,9 @@
 
 using System;
 using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media;
 
 using ICSharpCode.AvalonEdit.Document;
-using ICSharpCode.AvalonEdit.Editing;
 using ICSharpCode.AvalonEdit.Rendering;
 
 namespace ICSharpCode.AvalonEdit.Search
@@ -32,57 +28,56 @@ namespace ICSharpCode.AvalonEdit.Search
 	class SearchResultBackgroundRenderer : IBackgroundRenderer
 	{
 		TextSegmentCollection<SearchResult> currentResults = new TextSegmentCollection<SearchResult>();
-		
+
 		public TextSegmentCollection<SearchResult> CurrentResults {
 			get { return currentResults; }
 		}
-		
+
 		public KnownLayer Layer {
 			get {
 				// draw behind selection
 				return KnownLayer.Selection;
 			}
 		}
-		
+
 		public SearchResultBackgroundRenderer()
 		{
-			markerBrush = Brushes.LightGreen;
-			markerPen = new Pen(markerBrush, 1);
+			MarkerBrush = Brushes.LightGreen;
+			MarkerPen = null;
+			MarkerCornerRadius = 3.0;
 		}
-		
-		Brush markerBrush;
-		Pen markerPen;
-		
-		public Brush MarkerBrush {
-			get { return markerBrush; }
-			set {
-				this.markerBrush = value;
-				markerPen = new Pen(markerBrush, 1);
-			}
-		}
-		
+
+		public Brush MarkerBrush { get; set; }
+		public Pen MarkerPen { get; set; }
+		public double MarkerCornerRadius { get; set; }
+
 		public void Draw(TextView textView, DrawingContext drawingContext)
 		{
 			if (textView == null)
 				throw new ArgumentNullException("textView");
 			if (drawingContext == null)
 				throw new ArgumentNullException("drawingContext");
-			
+
 			if (currentResults == null || !textView.VisualLinesValid)
 				return;
-			
+
 			var visualLines = textView.VisualLines;
 			if (visualLines.Count == 0)
 				return;
-			
+
 			int viewStart = visualLines.First().FirstDocumentLine.Offset;
 			int viewEnd = visualLines.Last().LastDocumentLine.EndOffset;
-			
+
+			Brush markerBrush = MarkerBrush;
+			Pen markerPen = MarkerPen;
+			double markerCornerRadius = MarkerCornerRadius;
+			double markerPenThickness = markerPen != null ? markerPen.Thickness : 0;
+
 			foreach (SearchResult result in currentResults.FindOverlappingSegments(viewStart, viewEnd - viewStart)) {
 				BackgroundGeometryBuilder geoBuilder = new BackgroundGeometryBuilder();
 				geoBuilder.AlignToWholePixels = true;
-				geoBuilder.BorderThickness = markerPen != null ? markerPen.Thickness : 0;
-				geoBuilder.CornerRadius = 3;
+				geoBuilder.BorderThickness = markerPenThickness;
+				geoBuilder.CornerRadius = markerCornerRadius;
 				geoBuilder.AddSegment(textView, result);
 				Geometry geometry = geoBuilder.CreateGeometry();
 				if (geometry != null) {

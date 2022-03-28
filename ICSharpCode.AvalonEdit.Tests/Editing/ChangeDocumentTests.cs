@@ -19,14 +19,12 @@
 using System;
 using System.Text;
 using ICSharpCode.AvalonEdit.Document;
-#if NREFACTORY
-using ICSharpCode.NRefactory;
-#endif
 using NUnit.Framework;
 
 namespace ICSharpCode.AvalonEdit.Editing
 {
 	[TestFixture]
+	[Apartment(System.Threading.ApartmentState.STA)]
 	public class ChangeDocumentTests
 	{
 		[Test]
