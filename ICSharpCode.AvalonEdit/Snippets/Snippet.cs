@@ -32,7 +32,7 @@ namespace ICSharpCode.AvalonEdit.Snippets
 		/// <summary>
 		/// Inserts the snippet into the text area.
 		/// </summary>
-		public void Insert(TextArea textArea)
+		public InsertionContext Insert(TextArea textArea)
 		{
 			if (textArea == null)
 				throw new ArgumentNullException("textArea");
@@ -54,6 +54,8 @@ namespace ICSharpCode.AvalonEdit.Snippets
 				Insert(context);
 				context.RaiseInsertionCompleted(EventArgs.Empty);
 			}
+
+			return context;
 		}
 	}
 }
