@@ -55,7 +55,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			Rect workingArea = System.Windows.Forms.Screen.FromPoint(pointOnScreen.ToSystemDrawing()).WorkingArea.ToWpf().TransformFromDevice(this);
 
 			MaxHeight = workingArea.Height;
-			MaxWidth = Math.Min(Math.Min(workingArea.Width, Math.Max(1000, workingArea.Width * 0.6)), 800);
+			MaxWidth = Math.Min(workingArea.Width, Math.Max(1000, workingArea.Width * 0.6));
 
 			base.OnSourceInitialized(e);
 		}

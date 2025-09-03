@@ -167,7 +167,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
                 //    e.Handled = true;
                 //    listBox.SelectIndex(listBox.Items.Count - 1);
                 //    break;
-                case Key.Tab:
+				case Key.Tab:
 				case Key.Enter:
 					e.Handled = true;
 					RequestInsertion(e);
@@ -331,8 +331,6 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 
 		void SelectIndexCentered(int bestIndex)
 		{
-            return;
-
 			if (bestIndex < 0) {
 				listBox.ClearSelection();
 			} else {
@@ -385,7 +383,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 				if (itemText.IndexOf(query, StringComparison.InvariantCultureIgnoreCase) >= 0)
 					return 2;
 			}
-			
+
 			if (!camelCaseMatch.HasValue)
 				camelCaseMatch = CamelCaseMatch(itemText, query);
 			if (camelCaseMatch == true)
