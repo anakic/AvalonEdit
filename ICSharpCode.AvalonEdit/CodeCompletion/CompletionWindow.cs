@@ -59,10 +59,35 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			this.MinWidth = 30;
 
 			toolTip.PlacementTarget = this;
-			toolTip.Placement = PlacementMode.Right;
+			toolTip.Placement = PlacementMode.Custom;
+			toolTip.CustomPopupPlacementCallback = PlaceRightThenLeft;
 			toolTip.Closed += toolTip_Closed;
 
+			this.IsVisibleChanged += CompletionWindow_IsVisibleChanged;
+
 			AttachEvents();
+		}
+
+		public static CustomPopupPlacement[] PlaceRightThenLeft(
+			Size popupSize, Size targetSize, Point offset)
+		{
+			// Right of the target, vertically centered
+			var right = new CustomPopupPlacement(
+				new Point(targetSize.Width, 0),
+				PopupPrimaryAxis.Vertical);
+
+			// Fallback: left of the target
+			var left = new CustomPopupPlacement(
+				new Point(-popupSize.Width, 0),
+				PopupPrimaryAxis.Vertical);
+
+			return new[] { right, left };
+		}
+
+		private void CompletionWindow_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+		{
+			if (Visibility != Visibility.Visible)
+				toolTip.IsOpen = false;
 		}
 
 		#region ToolTip handling
@@ -99,6 +124,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			Dispatcher.BeginInvoke(new Action(() => SetDescription(selectedItem.Description)));
 		}
 
+		// todo: debounce (or is it throttle?) this for 1s to avoid looking up description if the user is still typing... 
 		private void SetDescription(object description)
 		{
 			if (description != null) {
