@@ -286,18 +286,9 @@ namespace ICSharpCode.AvalonEdit.Folding
 			Pen[] colors = new Pen[allTextLines.Count + 1];
 			Pen[] endMarker = new Pen[allTextLines.Count];
 
-			try
-			{
-				CalculateFoldLinesForFoldingsActiveAtStart(allTextLines, colors, endMarker);
-				CalculateFoldLinesForMarkers(allTextLines, colors, endMarker);
-				DrawFoldLines(drawingContext, colors, endMarker);
-			}
-			catch
-			{ 
-				// we never want unhandled exceptions throwing from the OnRender since we're not the
-				// ones responsible for calling it, so we can't handle them. If we let exceptions 
-				// get thrown from here, it will crash the process.
-			}
+			CalculateFoldLinesForFoldingsActiveAtStart(allTextLines, colors, endMarker);
+			CalculateFoldLinesForMarkers(allTextLines, colors, endMarker);
+			DrawFoldLines(drawingContext, colors, endMarker);
 
 			base.OnRender(drawingContext);
 		}

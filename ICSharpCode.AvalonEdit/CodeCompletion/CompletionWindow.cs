@@ -17,6 +17,7 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -74,12 +75,32 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 				toolTip.Content = null;
 		}
 
+		ICompletionData selectedItem;
 		void completionList_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			var item = completionList.SelectedItem;
 			if (item == null)
 				return;
+
+			if (selectedItem is INotifyPropertyChanged n1)
+				n1.PropertyChanged -= selectedItem_PropertyChanged;
+
+			selectedItem = item;
+
+			if (selectedItem is INotifyPropertyChanged n2)
+				n2.PropertyChanged += selectedItem_PropertyChanged;
+
 			object description = item.Description;
+			SetDescription(description);
+		}
+
+		private void selectedItem_PropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			Dispatcher.BeginInvoke(new Action(() => SetDescription(selectedItem.Description)));
+		}
+
+		private void SetDescription(object description)
+		{
 			if (description != null) {
 				string descriptionText = description as string;
 				if (descriptionText != null) {
